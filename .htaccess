@@ -1,0 +1,16 @@
+
+# HTID:20590668: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:20590668:
+
+Options -Indexes
+ErrorDocument 403 /420.php
+ErrorDocument 404 /420.php
+ErrorDocument 504 /420.php
+
+# protect files beginning with .
+RedirectMatch 403 /\.(.*)
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^bobbyfabie.pro$
+RewriteRule ^(.*)$ https://bobbyfabie.pro/$1 [R=301,L]
